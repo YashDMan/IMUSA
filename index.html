@@ -774,6 +774,166 @@
     50% { opacity: 0.4; }
   }
 
+
+  /* ── RESULTS / LEADERBOARD ── */
+  .results-section {
+    background:
+      radial-gradient(ellipse 70% 50% at 10% 20%, rgba(249,115,22,0.08), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 70%, rgba(59,130,246,0.07), transparent 60%);
+  }
+
+  .results-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .result-highlight {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .result-highlight .number {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent1);
+  }
+
+  .result-highlight .label {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .leaderboard-wrap {
+    background: rgba(15,22,40,0.88);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+  }
+
+  .leaderboard-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 680px;
+  }
+
+  .leaderboard th {
+    background: rgba(59,130,246,0.08);
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 1rem 1.1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .leaderboard td {
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.045);
+    font-size: 0.82rem;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .leaderboard tbody tr {
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .leaderboard tbody tr:hover {
+    background: rgba(249,115,22,0.055);
+  }
+
+  .leaderboard tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .rank-cell {
+    width: 72px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .rank-medal {
+    font-size: 1.05rem;
+  }
+
+  .team-name {
+    font-weight: 700;
+  }
+
+  .score-cell {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: var(--accent1);
+  }
+
+  .percentage-cell {
+    font-family: 'Space Mono', monospace;
+    color: var(--accent2);
+  }
+
+  .leaderboard .top-1 {
+    background: linear-gradient(90deg, rgba(249,115,22,0.11), transparent);
+  }
+
+  .leaderboard .top-2 {
+    background: linear-gradient(90deg, rgba(59,130,246,0.08), transparent);
+  }
+
+  .leaderboard .top-3 {
+    background: linear-gradient(90deg, rgba(168,85,247,0.08), transparent);
+  }
+
+  .invalid-row td {
+    color: var(--muted);
+    opacity: 0.72;
+  }
+
+  .na-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 5px;
+    font-size: 0.65rem;
+    color: var(--muted);
+  }
+
+  .results-note {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1.7;
+  }
+
+  .results-note strong {
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .results-summary { grid-template-columns: 1fr; }
+    .leaderboard td, .leaderboard th { padding: 0.75rem 0.8rem; }
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .about-grid, .dataset-visual, .part-grid { grid-template-columns: 1fr; }
@@ -796,6 +956,7 @@
     <li><a href="#dataset">Dataset</a></li>
     <li><a href="#timeline">Timeline</a></li>
     <li><a href="#evaluation">Evaluation</a></li>
+    <li><a href="#results">Results</a></li>
     <li><a href="#organizers">Organizers</a></li>
   </ul>
 </nav>
@@ -813,7 +974,7 @@
       &amp; <span class="accent2">Sentiment Analysis (IMUSA)</span>
     </h1>
     <p class="hero-sub">
-      IMUSA — A pioneering multimodal shared task for sentiment classification of Punjabi memes, addressing low-resource Indic language understanding at FIRE 2026.
+      IMUSA:- A pioneering multimodal shared task for sentiment classification of Punjabi memes, addressing low-resource Indic language understanding at FIRE 2026.
     </p>
     <div class="hero-meta">
       <div class="hero-pill"><span class="icon">📍</span><span>FIRE 2026</span></div>
@@ -822,7 +983,7 @@
     </div>
     <div class="hero-stats">
       <div class="stat-card">
-        <div class="stat-number">3.5k</div>
+        <div class="stat-number">3502</div>
         <div class="stat-label">Total Memes</div>
       </div>
       <div class="stat-card">
@@ -900,9 +1061,9 @@
         <h3>Offensive</h3>
         <p>Content that is abusive, insulting, or inappropriate. Targets individuals, communities, or social groups and contributes to harmful narratives. Identifying such content is critical for automated moderation systems.</p>
       </div>
-      <div class="cat-card motivational">
+      <div class="cat-card motivation">
         <span class="cat-icon">💪</span>
-        <h3>Motivational</h3>
+        <h3>Motivation</h3>
         <p>Memes intended to inspire or encourage positive thinking. Include uplifting messages, life advice, or emotionally supportive content aimed at motivating individuals and promoting well-being.</p>
       </div>
     </div>
@@ -949,28 +1110,28 @@
           <div class="bar-track">
             <div class="bar-fill" style="width:72%; background: linear-gradient(90deg,#f97316,#fb923c);"></div>
           </div>
-          <span class="bar-item-val">00</span>
+          <span class="bar-item-val">~00</span>
         </div>
         <div class="bar-item">
           <span class="bar-item-label">😐 Neutral</span>
           <div class="bar-track">
             <div class="bar-fill" style="width:88%; background: linear-gradient(90deg,#3b82f6,#60a5fa);"></div>
           </div>
-          <span class="bar-item-val">00</span>
+          <span class="bar-item-val">~00</span>
         </div>
         <div class="bar-item">
           <span class="bar-item-label">⚠️ Offensive</span>
           <div class="bar-track">
             <div class="bar-fill" style="width:55%; background: linear-gradient(90deg,#ef4444,#f87171);"></div>
           </div>
-          <span class="bar-item-val">00</span>
+          <span class="bar-item-val">~00</span>
         </div>
         <div class="bar-item">
-          <span class="bar-item-label">💪 Motivational</span>
+          <span class="bar-item-label">💪 Motivation</span>
           <div class="bar-track">
             <div class="bar-fill" style="width:78%; background: linear-gradient(90deg,#22c55e,#4ade80);"></div>
           </div>
-          <span class="bar-item-val">00</span>
+          <span class="bar-item-val">~00</span>
         </div>
         <p style="font-size:0.72rem; color:var(--muted); margin-top:1.5rem;">* Distribution is approximate; class imbalance reflects real-world social media data.</p>
       </div>
@@ -985,42 +1146,42 @@
     <div class="section-divider"></div>
     <div class="timeline">
       <div class="tl-item">
-        <div class="tl-date"> 15 June 2026 </div>
+        <div class="tl-date"> TBD </div>
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <h4>🚀 Registration Opens </h4>
+          <h4>🚀 Task Opens + Training Data Released</h4>
           <p>Track website goes live. Training data made available to registered participants.</p>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-date"> 17 June 2026 </div>
+        <div class="tl-date"> TBD </div>
         <div class="tl-dot" style="background:var(--accent2); box-shadow: 0 0 12px rgba(59,130,246,0.5);"></div>
         <div class="tl-content">
-          <h4>📦 Training Data Release</h4>
+          <h4>📦 Test Data Release</h4>
           <p>Test set distributed to participants for final system evaluation.</p>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-date"> 10 July 2026 </div>
+        <div class="tl-date"> TBD </div>
         <div class="tl-dot" style="background:var(--accent3); box-shadow: 0 0 12px rgba(168,85,247,0.5);"></div>
         <div class="tl-content">
-          <h4>📤 Test Dataset Release</h4>
+          <h4>📤 Run Submission Deadline</h4>
           <p>All participant system runs must be submitted. Each team may submit 1–3 runs.</p>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-date"> 31 July 2026 </div>
+        <div class="tl-date"> TBD </div>
         <div class="tl-dot" style="background:var(--accent4); box-shadow: 0 0 12px rgba(34,197,94,0.5);"></div>
         <div class="tl-content">
-          <h4> Run Submission Deadline</h4>
+          <h4>🏆 Results Declaration</h4>
           <p>Official track results announced and communicated to all participating teams.</p>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-date"> 6 August 2026 </div>
+        <div class="tl-date"> TBD </div>
         <div class="tl-dot" style="background:#f59e0b; box-shadow: 0 0 12px rgba(245,158,11,0.5);"></div>
         <div class="tl-content">
-          <h4>🏆 Results Declaration</h4>
+          <h4>📝 Working Notes Due</h4>
           <p>Participants submit working notes describing their approach and results.</p>
         </div>
       </div>
@@ -1028,7 +1189,7 @@
         <div class="tl-date"> TBD </div>
         <div class="tl-dot" style="background:#ec4899; box-shadow: 0 0 12px rgba(236,72,153,0.5);"></div>
         <div class="tl-content">
-          <h4>📄 Paper Submission Deadline</h4>
+          <h4>📄 Camera-Ready Copies Due</h4>
           <p>Final camera-ready copies of working notes and the overview paper are due.</p>
         </div>
       </div>
@@ -1070,6 +1231,113 @@
 </section>
 
 
+
+
+<!-- RESULTS / LEADERBOARD -->
+<section id="results" class="results-section">
+  <div class="container">
+    <div class="section-label">FIRE 2026 · IMUSA</div>
+    <h2 class="section-title">Final Results</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">
+      Official IMUSA leaderboard based on Macro-F1 scores computed on the 500-sample gold test set.
+      Teams are ranked in descending order of Macro-F1.
+    </p>
+
+    <div class="results-summary">
+      <div class="result-highlight">
+        <span class="number">30</span>
+        <span class="label">Submitted Teams</span>
+      </div>
+      <div class="result-highlight">
+        <span class="number">500</span>
+        <span class="label">Gold Test Samples</span>
+      </div>
+      <div class="result-highlight">
+        <span class="number">46.196%</span>
+        <span class="label">Top Macro-F1</span>
+      </div>
+    </div>
+
+    <div class="leaderboard-wrap">
+      <div class="leaderboard-scroll">
+        <table class="leaderboard">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th>Macro-F1</th>
+              <th>Macro-F1 (%)</th>
+              <th>Matched</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="top-1">
+              <td class="rank-cell"><span class="rank-medal">🥇</span> 1</td>
+              <td class="team-name">Team Solutions</td>
+              <td class="score-cell">0.461960</td>
+              <td class="percentage-cell">46.196001%</td>
+              <td>500 / 500</td>
+            </tr>
+            <tr class="top-2">
+              <td class="rank-cell"><span class="rank-medal">🥈</span> 2</td>
+              <td class="team-name">Text Guardians</td>
+              <td class="score-cell">0.458000</td>
+              <td class="percentage-cell">45.800000%</td>
+              <td>500 / 500</td>
+            </tr>
+            <tr class="top-3">
+              <td class="rank-cell"><span class="rank-medal">🥉</span> 3</td>
+              <td class="team-name">Lingchao Kong</td>
+              <td class="score-cell">0.455817</td>
+              <td class="percentage-cell">45.581673%</td>
+              <td>500 / 500</td>
+            </tr>
+            <tr><td class="rank-cell">4</td><td class="team-name">Data Alchemist</td><td class="score-cell">0.440392</td><td class="percentage-cell">44.039158%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">5</td><td class="team-name">Big three's</td><td class="score-cell">0.439028</td><td class="percentage-cell">43.902816%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">6</td><td class="team-name">MindMergeAI</td><td class="score-cell">0.438879</td><td class="percentage-cell">43.887858%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">7</td><td class="team-name">UPES Knight</td><td class="score-cell">0.435538</td><td class="percentage-cell">43.553790%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">8</td><td class="team-name">VerSa</td><td class="score-cell">0.432853</td><td class="percentage-cell">43.285292%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">9</td><td class="team-name">TEAM ACE</td><td class="score-cell">0.432098</td><td class="percentage-cell">43.209769%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">10</td><td class="team-name">Baseline</td><td class="score-cell">0.432067</td><td class="percentage-cell">43.206685%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">11</td><td class="team-name">NexaNLP</td><td class="score-cell">0.427400</td><td class="percentage-cell">42.739975%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">12</td><td class="team-name">Cloud Bolts</td><td class="score-cell">0.422527</td><td class="percentage-cell">42.252651%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">13</td><td class="team-name">Mavericks</td><td class="score-cell">0.421288</td><td class="percentage-cell">42.128776%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">14</td><td class="team-name">Innovrtta</td><td class="score-cell">0.416673</td><td class="percentage-cell">41.667330%</td><td>447 / 500</td></tr>
+            <tr><td class="rank-cell">15</td><td class="team-name">Khushi Malik</td><td class="score-cell">0.410617</td><td class="percentage-cell">41.061655%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">16</td><td class="team-name">Cloud NLM</td><td class="score-cell">0.409210</td><td class="percentage-cell">40.920956%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">17</td><td class="team-name">Janhvi Shukla</td><td class="score-cell">0.404673</td><td class="percentage-cell">40.467266%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">18</td><td class="team-name">TokenX</td><td class="score-cell">0.404456</td><td class="percentage-cell">40.445555%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">19</td><td class="team-name">Team NEXUS</td><td class="score-cell">0.401230</td><td class="percentage-cell">40.123012%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">20</td><td class="team-name">TechAlpha</td><td class="score-cell">0.390536</td><td class="percentage-cell">39.053564%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">21</td><td class="team-name">Insight Nexus</td><td class="score-cell">0.382017</td><td class="percentage-cell">38.201699%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">22</td><td class="team-name">Vagabonds</td><td class="score-cell">0.371886</td><td class="percentage-cell">37.188609%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">23</td><td class="team-name">KARB</td><td class="score-cell">0.355735</td><td class="percentage-cell">35.573493%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">24</td><td class="team-name">Legends</td><td class="score-cell">0.346526</td><td class="percentage-cell">34.652570%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">25</td><td class="team-name">Sentimentalists</td><td class="score-cell">0.339353</td><td class="percentage-cell">33.935294%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">26</td><td class="team-name">Piyush and Hardik</td><td class="score-cell">0.294137</td><td class="percentage-cell">29.413704%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">27</td><td class="team-name">Team Elite</td><td class="score-cell">0.279614</td><td class="percentage-cell">27.961448%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">28</td><td class="team-name">CyberShield</td><td class="score-cell">0.212313</td><td class="percentage-cell">21.231300%</td><td>500 / 500</td></tr>
+            <tr><td class="rank-cell">29</td><td class="team-name">Coders</td><td class="score-cell">0.199985</td><td class="percentage-cell">19.998526%</td><td>500 / 500</td></tr>
+            <tr class="invalid-row">
+              <td class="rank-cell">30</td>
+              <td class="team-name">Team Vitality</td>
+              <td><span class="na-badge">N/A</span></td>
+              <td><span class="na-badge">N/A</span></td>
+              <td>0 / 500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="results-note">
+      <strong>Note:</strong> Team Vitality has no reported Macro-F1 because none of its 500 gold IDs were matched
+      (0 matched samples; 3,002 extra IDs). Innovrtta's score is based on 447 matched samples, with 53 missing IDs.
+      All other ranked teams have 500 matched samples.
+    </p>
+  </div>
+</section>
 
 <!-- ORGANIZERS -->
 <section id="organizers">
@@ -1126,7 +1394,7 @@
       <span class="footer-badge">FIRE 2026</span>
       <span class="footer-badge">Shared Task</span>
       <span class="footer-badge">Multimodal NLP</span>
-      <span class="footer-badge">Low-Resource Indic Languages</span>
+      <span class="footer-badge">Low-Resource Languages</span>
       <span class="footer-badge">Punjabi Memes</span>
     </div>
   </div>
