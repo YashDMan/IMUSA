@@ -941,6 +941,40 @@
     .timeline::before { left: 80px; }
     .tl-date { width: 80px; font-size: 0.65rem; }
   }
+
+  /* GREEN BASELINE ROW */
+.leaderboard tr.baseline-row {
+background-color: #dcfce7 !important;
+border-left: 5px solid #16a34a;
+}
+
+.leaderboard tr.baseline-row td {
+background-color: #dcfce7 !important;
+color: #166534;
+font-weight: 700;
+}
+
+.leaderboard tr.baseline-row:hover,
+.leaderboard tr.baseline-row:hover td {
+background-color: #bbf7d0 !important;
+}
+
+.baseline-score {
+color: #15803d !important;
+font-weight: 800 !important;
+}
+
+.baseline-badge {
+display: inline-block;
+padding: 5px 10px;
+border-radius: 6px;
+background-color: #16a34a;
+color: white !important;
+font-size: 0.75rem;
+font-weight: 800;
+letter-spacing: 0.04em;
+}
+
 </style>
 </head>
 <body>
@@ -1234,6 +1268,7 @@
 
 
 <!-- RESULTS / LEADERBOARD -->
+
 <section id="results" class="results-section">
   <div class="container">
     <div class="section-label">FIRE 2026 · IMUSA</div>
@@ -1244,97 +1279,271 @@
       Teams are ranked in descending order of Macro-F1.
     </p>
 
-    <div class="results-summary">
-      <div class="result-highlight">
-        <span class="number">30</span>
-        <span class="label">Submitted Teams</span>
-      </div>
-      <div class="result-highlight">
-        <span class="number">500</span>
-        <span class="label">Test Samples</span>
-      </div>
-      <div class="result-highlight">
-        <span class="number">0.46196</span>
-        <span class="label">Top Macro-F1</span>
-      </div>
-    </div>
 
-    <div class="leaderboard-wrap">
-      <div class="leaderboard-scroll">
-        <table class="leaderboard">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Team</th>
-              <th>Macro-F1</th>
-              <th>Matched</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="top-1">
-              <td class="rank-cell"><span class="rank-medal">🥇</span> 1</td>
-              <td class="team-name">Team Solutions</td>
-              <td class="score-cell">0.461960</td>
-              <td>500 / 500</td>
-            </tr>
-            <tr class="top-2">
-              <td class="rank-cell"><span class="rank-medal">🥈</span> 2</td>
-              <td class="team-name">Text Guardians</td>
-              <td class="score-cell">0.458000</td>
-              <td>500 / 500</td>
-            </tr>
-            <tr class="top-3">
-              <td class="rank-cell"><span class="rank-medal">🥉</span> 3</td>
-              <td class="team-name">Lingchao Kong</td>
-              <td class="score-cell">0.455817</td>
-              
-              <td>500 / 500</td>
-            </tr>
-            <tr><td class="rank-cell">4</td><td class="team-name">Data Alchemist</td><td class="score-cell">0.440392</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">5</td><td class="team-name">Big three's</td><td class="score-cell">0.439028</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">6</td><td class="team-name">MindMergeAI</td><td class="score-cell">0.438879</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">7</td><td class="team-name">UPES Knight</td><td class="score-cell">0.435538</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">8</td><td class="team-name">VerSa</td><td class="score-cell">0.432853</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">9</td><td class="team-name">TEAM ACE</td><td class="score-cell">0.432098</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">10</td><td class="team-name">Baseline</td><td class="score-cell">0.432067</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">11</td><td class="team-name">NexaNLP</td><td class="score-cell">0.427400</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">12</td><td class="team-name">Cloud Bolts</td><td class="score-cell">0.422527</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">13</td><td class="team-name">Mavericks</td><td class="score-cell">0.421288</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">14</td><td class="team-name">Innovrtta</td><td class="score-cell">0.416673</td><td>447/ 500</td></tr>
-            <tr><td class="rank-cell">15</td><td class="team-name">Khushi Malik</td><td class="score-cell">0.410617</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">16</td><td class="team-name">Cloud NLM</td><td class="score-cell">0.409210</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">17</td><td class="team-name">Janhvi Shukla</td><td class="score-cell">0.404673</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">18</td><td class="team-name">TokenX</td><td class="score-cell">0.404456</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">19</td><td class="team-name">Team NEXUS</td><td class="score-cell">0.401230</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">20</td><td class="team-name">TechAlpha</td><td class="score-cell">0.390536</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">21</td><td class="team-name">Insight Nexus</td><td class="score-cell">0.382017</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">22</td><td class="team-name">Vagabonds</td><td class="score-cell">0.371886</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">23</td><td class="team-name">KARB</td><td class="score-cell">0.355735</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">24</td><td class="team-name">Legends</td><td class="score-cell">0.346526</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">25</td><td class="team-name">Sentimentalists</td><td class="score-cell">0.339353</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">26</td><td class="team-name">Piyush and Hardik</td><td class="score-cell">0.294137</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">27</td><td class="team-name">Team Elite</td><td class="score-cell">0.279614</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">28</td><td class="team-name">CyberShield</td><td class="score-cell">0.212313</td><td>500 / 500</td></tr>
-            <tr><td class="rank-cell">29</td><td class="team-name">Coders</td><td class="score-cell">0.199985</td><td>500 / 500</td></tr>
-            
-              <td class="rank-cell">30</td>
-              <td class="team-name">Team Vitality</td>
-              <td><span class="na-badge">N/A</span></td>
-              <td><span class="na-badge">N/A</span></td>
-            
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+<div class="results-summary">
+  <div class="result-highlight">
+    <span class="number">31</span>
+    <span class="label">Submitted Teams</span>
+  </div>
+  <div class="result-highlight">
+    <span class="number">500</span>
+    <span class="label">Test Samples</span>
+  </div>
+  <div class="result-highlight">
+    <span class="number">0.461960</span>
+    <span class="label">Top Macro-F1</span>
+  </div>
+</div>
 
-    <p class="results-note">
-      <strong>Note:</strong> Team Vitality has no reported Macro-F1 because none of its 500 gold IDs were matched
-      (0 matched samples; 3,002 extra IDs). Innovrtta's score is based on 447 matched samples, with 53 missing IDs.
-      All other ranked teams have 500 matched samples.
-    </p>
+<div class="leaderboard-wrap">
+  <div class="leaderboard-scroll">
+    <table class="leaderboard">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team</th>
+          <th>Macro-F1</th>
+          <th>Matched</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr class="top-1">
+          <td class="rank-cell"><span class="rank-medal">🥇</span> 1</td>
+          <td class="team-name">Team Solutions</td>
+          <td class="score-cell">0.461960</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr class="top-2">
+          <td class="rank-cell"><span class="rank-medal">🥈</span> 2</td>
+          <td class="team-name">Text Guardians</td>
+          <td class="score-cell">0.458000</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr class="top-3">
+          <td class="rank-cell"><span class="rank-medal">🥉</span> 3</td>
+          <td class="team-name">Lingchao Kong</td>
+          <td class="score-cell">0.455817</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">4</td>
+          <td class="team-name">Delta</td>
+          <td class="score-cell">0.442115</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">5</td>
+          <td class="team-name">Data Alchemist</td>
+          <td class="score-cell">0.440392</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">6</td>
+          <td class="team-name">Big three's</td>
+          <td class="score-cell">0.439028</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">7</td>
+          <td class="team-name">MindMergeAI</td>
+          <td class="score-cell">0.438879</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">8</td>
+          <td class="team-name">UPES Knight</td>
+          <td class="score-cell">0.435538</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">9</td>
+          <td class="team-name">VerSa</td>
+          <td class="score-cell">0.432853</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">10</td>
+          <td class="team-name">TEAM ACE</td>
+          <td class="score-cell">0.432098</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <!-- BASELINE -->
+        <tr class="baseline-row">
+            <td class="rank-cell">11</td>
+            <td class="team-name">
+            <span class="baseline-badge">BASELINE</span>
+            </td>
+            <td class="score-cell baseline-score">0.432067</td>
+            <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">12</td>
+          <td class="team-name">NexaNLP</td>
+          <td class="score-cell">0.427400</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">13</td>
+          <td class="team-name">Cloud Bolts</td>
+          <td class="score-cell">0.422527</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">14</td>
+          <td class="team-name">Mavericks</td>
+          <td class="score-cell">0.421288</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">15</td>
+          <td class="team-name">Innovrtta</td>
+          <td class="score-cell">0.416673</td>
+          <td>447 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">16</td>
+          <td class="team-name">Khushi Malik</td>
+          <td class="score-cell">0.410617</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">17</td>
+          <td class="team-name">Cloud NLM</td>
+          <td class="score-cell">0.409210</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">18</td>
+          <td class="team-name">Janhvi Shukla</td>
+          <td class="score-cell">0.404673</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">19</td>
+          <td class="team-name">TokenX</td>
+          <td class="score-cell">0.404456</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">20</td>
+          <td class="team-name">Team NEXUS</td>
+          <td class="score-cell">0.401230</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">21</td>
+          <td class="team-name">TechAlpha</td>
+          <td class="score-cell">0.390536</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">22</td>
+          <td class="team-name">Insight Nexus</td>
+          <td class="score-cell">0.382017</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">23</td>
+          <td class="team-name">Vagabonds</td>
+          <td class="score-cell">0.371886</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">24</td>
+          <td class="team-name">KARB</td>
+          <td class="score-cell">0.355735</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">25</td>
+          <td class="team-name">Legends</td>
+          <td class="score-cell">0.346526</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">26</td>
+          <td class="team-name">Sentimentalists</td>
+          <td class="score-cell">0.339353</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">27</td>
+          <td class="team-name">Piyush and Hardik</td>
+          <td class="score-cell">0.294137</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">28</td>
+          <td class="team-name">Team Elite</td>
+          <td class="score-cell">0.279614</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">29</td>
+          <td class="team-name">CyberShield</td>
+          <td class="score-cell">0.212313</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">30</td>
+          <td class="team-name">Coders</td>
+          <td class="score-cell">0.199985</td>
+          <td>500 / 500</td>
+        </tr>
+
+        <tr>
+          <td class="rank-cell">31</td>
+          <td class="team-name">Team Vitality</td>
+          <td><span class="na-badge">N/A</span></td>
+          <td><span class="na-badge">N/A</span></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p class="results-note">
+  <strong>Note:</strong> Team Vitality has no reported Macro-F1 because none of its 500 gold IDs were matched
+  (0 matched samples; 3,002 extra IDs). Innovrtta's score is based on 447 matched samples, with 53 missing IDs.
+  All other ranked teams have 500 matched samples.
+</p>
+
+
   </div>
 </section>
+
 
 <!-- ORGANIZERS -->
 <section id="organizers">
